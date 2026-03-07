@@ -17,8 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:4200",
-      "http://localhost:5175",
-      "https://sweet-shop-management-one.vercel.app",
+      "https://mithaimagicfrontend.netlify.app/"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
