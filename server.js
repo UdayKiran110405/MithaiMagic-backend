@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:4200",
-      "https://mithaimagicfrontend.netlify.app/"
+      "https://mithaimagicfrontend.netlify.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
