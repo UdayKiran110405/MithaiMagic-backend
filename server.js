@@ -248,27 +248,6 @@ app.get("/api/health", (req, res) => {
 });
 
 // --- AUTHENTICATION ROUTES ---
-
-// backend/routes/auth.js
-app.post("/google-login", async (req, res) => {
-  const { email, username } = req.body;
-
-  // 1. Find or Create User in your DB
-  let user = await User.findOne({ email });
-  if (!user) {
-    user = await User.create({ email, username, role: "user" });
-  }
-
-  // 2. Generate your existing standard JWT
-  const token = jwt.sign(
-    { id: user._id, email: user.email, role: user.role },
-    process.env.JWT_SECRET,
-    { expiresIn: "1d" },
-  );
-
-  res.json({ token, user });
-});
-
 app.post("/api/auth/register", async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
